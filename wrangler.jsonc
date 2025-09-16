@@ -10,6 +10,15 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
+
+  // --- BLOCO DE OBSERVABILIDADE ADICIONADO AQUI ---
+  "observability": {
+    "logs": {
+      "enabled": true
+    }
+  },
+  // ----------------------------------------------
+
   "keep_vars": true,
   "upload_source_maps": true,
   "ai": {
