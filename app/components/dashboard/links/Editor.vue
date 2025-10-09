@@ -35,8 +35,10 @@ const EditLinkSchema = LinkSchema.pick({
     title: true,
     description: true,
     image: true,
+    public: true, // Exclude from omit to include it
   }).extend({
     expiration: z.coerce.date().optional(),
+    public: LinkSchema.shape.public, // Re-add public here
   }).optional(),
 })
 
@@ -67,6 +69,7 @@ const form = useForm({
     url: link.value.url,
     optional: {
       comment: link.value.comment,
+      public: link.value.public,
     },
   },
   validateOnMount: isEdit,
