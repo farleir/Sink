@@ -1,36 +1,103 @@
-import { LinkSchema } from '@@/schemas/link'
-import type { z } from 'zod'
+<script setup>
+import { BloggerIcon, GitHubIcon, GmailIcon, MastodonIcon, TelegramIcon, XIcon } from 'vue3-simple-icons'
 
-export default eventHandler(async (event) => {
-  const { cloudflare } = event.context
-  const { KV } = cloudflare.env
+const { title, email, telegram, blog, twitter, mastodon, github } = useAppConfig()
+</script>
 
-  // 1. List all link keys from the KV store
-  const { keys } = await KV.list({ prefix: 'link:' })
+<template>
+  <section class="md:pt-6">
+    <div class="container flex flex-col items-center py-8 mx-auto sm:flex-row">
+      <a
+        href="https://sink.cool"
+        class="text-xl font-black leading-none text-gray-900 select-none dark:text-gray-100 logo"
+        :title="title"
+      >{{ title }}</a>
+      <a
+        class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0"
+        href="https://html.zone"
+        target="_blank"
+        title="HTML.ZONE"
+      >
+        &copy; {{ new Date().getFullYear() }} Products of HTML.ZONE
+      </a>
+      <span
+        class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
+      >
+        <a
+          v-if="email"
+          :href="`mailto:${email}`"
+          title="Email"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.email') }}</span>
+          <GmailIcon
+            class="w-6 h-6"
+          />
+        </a>
+        <a
+          v-if="telegram"
+          :href="telegram"
+          target="_blank"
+          title="Telegram"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.telegram') }}</span>
+          <TelegramIcon
+            class="w-6 h-6"
+          />
+        </a>
+        <a
+          v-if="blog"
+          :href="blog"
+          target="_blank"
+          title="Blog"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.blog') }}</span>
+          <BloggerIcon
+            class="w-6 h-6"
+          />
+        </a>
 
-  if (!keys || keys.length === 0) {
-    return []
-  }
+        <a
+          v-if="twitter"
+          :href="twitter"
+          target="_blank"
+          title="Twitter"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.twitter') }}</span>
+          <XIcon
+            class="w-6 h-6"
+          />
+        </a>
 
-  // 2. Fetch all link objects in parallel
-  const linkPromises = keys.map(key => KV.get(key.name, { type: 'json' }))
-  const allLinks: (z.infer<typeof LinkSchema> | null)[] = await Promise.all(linkPromises)
+        <a
+          v-if="mastodon"
+          :href="mastodon"
+          target="_blank"
+          title="Mastodon"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.mastodon') }}</span>
+          <MastodonIcon
+            class="w-6 h-6"
+          />
+        </a>
 
-  // 3. Filter for public links and ensure they are valid
-  const publicLinks = allLinks
-    .filter((link): link is z.infer<typeof LinkSchema> =>
-      link !== null && LinkSchema.safeParse(link).success && link.public === true
-    )
-    // 4. Sort by creation date (newest first)
-    .sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0))
-    // 5. Limit the results
-    .slice(0, 20)
-    // 6. Select only the required fields
-    //.map(({ slug, url, description }) => ({
-    //  slug,
-    //  url,
-    //  description,
-    //}))
-
-  return publicLinks
-})
+        <a
+          v-if="github"
+          :href="github"
+          target="_blank"
+          title="GitHub"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">{{ $t('layouts.footer.social.github') }}</span>
+          <GitHubIcon
+            class="w-6 h-6"
+          />
+        </a>
+      </span>
+    </div>
+  </section>
+</template>

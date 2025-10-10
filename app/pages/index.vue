@@ -3,7 +3,6 @@
     <HomeTwitter />
     <HomeHero />
     <HomeFeatures />
-    <HomePublicLinksPanel />
     <HomeLogos />
     <HomeCta />
   </main>
