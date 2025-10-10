@@ -26,11 +26,11 @@ export default eventHandler(async (event) => {
     // 5. Limit the results
     .slice(0, 20)
     // 6. Select only the required fields
-    .map(({ slug, url, description }) => ({
-      slug,
-      url,
-      description,
-    }))
+    //.map(({ slug, url, description }) => ({
+    //  slug,
+    //  url,
+    //  description,
+    //}))
 
   return publicLinks
 })
