@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, defineComponent } from 'vue';
+
 // --- Head Management (Gerenciamento do <head>) ---
 useHead({
   title: 'Apps Farleir.com | Sink',
@@ -27,6 +29,44 @@ useHead({
     }
   ]
 });
+
+// --- Dados Estáticos dos Links ---
+const staticLinks = ref([
+    { slug: 'Status dos Sistemas', url: 'https://go.farleir.com/status', description: 'Monitoramento em tempo real dos serviços.' },
+    { slug: 'Frases do Bingo', url: 'https://go.farleir.com/frasesbingo', description: 'Gerador de frases para bingo corporativo.' },
+    { slug: 'Analista de Bagé', url: 'https://go.farleir.com/analistadebage', description: 'O grande pensador gaúcho em um app.' },
+    { slug: 'Linktree', url: 'https://linktr.ee/farleir', description: 'Todos os meus links em um só lugar.' },
+    { slug: 'Site Principal', url: 'https://farleir.com', description: 'Meu portfólio e blog principal.' },
+]);
+
+
+// --- COMPONENTE DO ITEM DA LISTA (definido localmente) ---
+const StaticLinkItem = defineComponent({
+    props: ['link'],
+    template: `
+        <a :href="link.url" target="_blank" rel="noopener noreferrer"
+           class="group flex items-center p-4 rounded-xl
+                  bg-[hsl(var(--card)/0.5)] border border-[hsl(var(--border))]
+                  transition-all duration-200 ease-in-out backdrop-blur-sm
+                  hover:bg-[hsl(var(--accent))] hover:border-[hsl(var(--border))] hover:scale-[1.02]">
+
+            <div class="flex-shrink-0 w-10 h-10 bg-[hsl(var(--secondary))] border border-[hsl(var(--border))] rounded-lg flex items-center justify-center mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                </svg>
+            </div>
+
+            <div class="flex-grow overflow-hidden">
+                <h3 class="font-semibold text-base text-[hsl(var(--card-foreground))] truncate">
+                    {{ link.slug }}
+                </h3>
+                <p class="text-sm text-[hsl(var(--muted-foreground))] truncate">
+                    {{ link.description || 'Nenhuma descrição fornecida.' }}
+                </p>
+            </div>
+        </a>
+    `
+});
 </script>
 
 <style>
@@ -42,7 +82,7 @@ useHead({
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 92.9%; /* Levemente mais escuro para melhor contraste no hover */
+    --accent: 240 4.8% 92.9%;
     --accent-foreground: 240 5.9% 10%;
     --border: 240 5.9% 90%;
     --radius: 0.5rem;
@@ -106,14 +146,11 @@ body::before {
                 </p>
             </div>
 
-            <!-- Iframe Section -->
-            <div class="max-w-7xl mx-auto h-[70vh] flex flex-col">
-                <iframe
-                    src="https://stats.uptimerobot.com/LTdsjZYinY"
-                    class="w-full h-full border-2 border-[hsl(var(--border))] rounded-lg shadow-lg"
-                    frameborder="0"
-                    scrolling="yes">
-                </iframe>
+            <!-- Lista de Links Estáticos -->
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <StaticLinkItem v-for="link in staticLinks" :key="link.slug" :link="link" />
+                </div>
             </div>
         </main>
 
