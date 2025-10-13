@@ -1,15 +1,7 @@
 <script setup>
-import { GitHubIcon, XIcon, InstagramIcon, FacebookIcon, LinkedinIcon } from 'vue3-simple-icons'
+import { GitHubIcon, XIcon } from 'vue3-simple-icons'
 
 const { title } = useAppConfig()
-
-const socialLinks = [
-  { name: 'LinkedIn', href: 'https://go.farleir.com/go-footer-linkedin', icon: LinkedinIcon },
-  { name: 'Instagram', href: 'https://go.farleir.com/go-footer-instagram', icon: InstagramIcon },
-  { name: 'Facebook', href: 'https://go.farleir.com/go-footer-facebook', icon: FacebookIcon },
-  { name: 'X', href: 'https://go.farleir.com/go-footer-x', icon: XIcon },
-  { name: 'GitHub', href: 'https://github.com/farleir/sink', icon: GitHubIcon },
-]
 </script>
 
 <template>
@@ -32,15 +24,27 @@ const socialLinks = [
         class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
       >
         <a
-          v-for="link in socialLinks"
-          :key="link.name"
-          :href="link.href"
+          href="https://go.farleir.com/go-footer-x"
           target="_blank"
-          :title="link.name"
+          title="X (Twitter)"
           class="text-gray-400 hover:text-gray-500"
         >
-          <span class="sr-only">{{ link.name }}</span>
-          <component :is="link.icon" class="w-6 h-6" />
+          <span class="sr-only">X (Twitter)</span>
+          <XIcon
+            class="w-6 h-6"
+          />
+        </a>
+
+        <a
+          href="https://go.farleir.com/go-footer-github"
+          target="_blank"
+          title="GitHub"
+          class="text-gray-400 hover:text-gray-500"
+        >
+          <span class="sr-only">GitHub</span>
+          <GitHubIcon
+            class="w-6 h-6"
+          />
         </a>
       </span>
     </div>
