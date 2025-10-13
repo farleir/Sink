@@ -125,6 +125,9 @@ body::before {
                     <StaticLinkItem v-for="link in staticLinks" :key="link.slug" :link="link" />
                 </div>
             </div>
+
+            <!-- Seção de Links Públicos Dinâmicos -->
+            <HomePublicLinksPanel />
         </main>
 
     </div>
