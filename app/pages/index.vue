@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineComponent } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // --- Head Management (Gerenciamento do <head>) ---
 useHead({
@@ -31,14 +31,12 @@ useHead({
 });
 
 // --- Dados Estáticos dos Links ---
-const staticLinks = ref([
-    { slug: 'Status dos Sistemas', url: 'https://go.farleir.com/status', description: 'Monitoramento em tempo real dos serviços.' },
+const staticApps = ref([
+    { slug: 'Sink', url: 'https://sink.farleir.com', description: 'Encurtador de URL simples e rápido.' },
     { slug: 'Frases do Bingo', url: 'https://go.farleir.com/frasesbingo', description: 'Gerador de frases para bingo corporativo.' },
     { slug: 'Analista de Bagé', url: 'https://go.farleir.com/analistadebage', description: 'O grande pensador gaúcho em um app.' },
-    { slug: 'Linktree', url: 'https://linktr.ee/farleir', description: 'Todos os meus links em um só lugar.' },
-    { slug: 'Site Principal', url: 'https://farleir.com', description: 'Meu portfólio e blog principal.' },
+    { slug: 'Status dos Sistemas', url: 'https://go.farleir.com/status', description: 'Monitoramento em tempo real dos serviços.' },
 ]);
-
 
 </script>
 
@@ -112,24 +110,23 @@ body::before {
             <!-- Cabeçalho -->
             <div class="text-center mb-12">
                 <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[hsl(var(--foreground))]">
-                    Apps Farleir.com
+                    Meus Aplicativos
                 </h1>
                 <p class="mt-3 max-w-2xl mx-auto text-base text-[hsl(var(--muted-foreground))]">
-                    'Composição' de aplicativos úteis ou nem tanto, depende.
+                    Uma coleção de ferramentas e projetos que desenvolvi.
                 </p>
             </div>
 
             <!-- Lista de Links Estáticos -->
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <StaticLinkItem v-for="link in staticLinks" :key="link.slug" :link="link" />
+                    <StaticLinkItem v-for="link in staticApps" :key="link.slug" :link="link" />
                 </div>
             </div>
 
             <!-- Seção de Links Públicos Dinâmicos -->
             <HomePublicLinksPanel />
         </main>
-
     </div>
   </div>
 </template>
