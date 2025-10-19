@@ -18,7 +18,7 @@ export default eventHandler(async (event) => {
         // Valida se o link tem o formato mínimo esperado e é público
         if (linkData && typeof linkData === 'object' && linkData.public === true) {
           // Faz uma validação segura para garantir que os campos essenciais existem
-          const parsed = LinkSchema.pick({ slug: true, url: true, description: true, createdAt: true }).safeParse(linkData)
+          const parsed = LinkSchema.pick({ slug: true, url: true, description: true, comment: true, createdAt: true }).safeParse(linkData)
           if (parsed.success) {
             return parsed.data
           }
