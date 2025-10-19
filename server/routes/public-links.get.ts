@@ -36,10 +36,10 @@ export default eventHandler(async (event) => {
       .filter((link): link is z.infer<typeof LinkSchema> => link !== null)
       .sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0))
       .slice(0, 20)
-      .map(({ slug, url, description }) => ({
+      .map(({ slug, url, description, comment }) => ({
         slug,
         url,
-        description,
+        description: comment || description, // Usa o comentário como fallback para a descrição
       }))
 
     return publicLinks
