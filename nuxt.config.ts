@@ -53,6 +53,11 @@ export default defineNuxtConfig({
     '/api/**': {
       cors: process.env.NUXT_API_CORS === 'true',
     },
+    '/api/links/public': {
+      security: {
+        rateLimiter: false
+      }
+    },
   },
 
   future: {
