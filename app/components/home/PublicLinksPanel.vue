@@ -7,7 +7,7 @@ const error = ref(null);
 
 onMounted(async () => {
   try {
-    const data = await $fetch('/api/links/public');
+    const data = await $fetch('/public-links');
     links.value = data;
   } catch (e: any) {
     error.value = e.data?.message || 'Ocorreu um erro ao carregar os links dinâmicos.';
