@@ -22,10 +22,10 @@ onMounted(async () => {
   <div v-if="links && links.length > 0" class="max-w-7xl mx-auto mt-16">
     <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[hsl(var(--foreground))]">
-            Links Públicos da Comunidade
+            Links Curtos Públicos
         </h2>
         <p class="mt-3 max-w-2xl mx-auto text-base text-[hsl(var(--muted-foreground))]">
-            Links úteis compartilhados pelos usuários.
+            Links marcados como abertos
         </p>
     </div>
 

@@ -110,10 +110,10 @@ body::before {
             <!-- Cabeçalho -->
             <div class="text-center mb-12">
                 <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[hsl(var(--foreground))]">
-                    Meus Aplicativos
+                    Aplicativos Cocriados com IA
                 </h1>
                 <p class="mt-3 max-w-2xl mx-auto text-base text-[hsl(var(--muted-foreground))]">
-                    Uma coleção de ferramentas e projetos que desenvolvi.
+                    Apps e ferramentas úteis (ou nem tanto)
                 </p>
             </div>
 
