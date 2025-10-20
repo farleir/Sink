@@ -32,9 +32,9 @@ useHead({
 
 // --- Dados Estáticos dos Links ---
 const staticApps = ref([
+    { slug: 'Pick2.Me', url: 'https://go.farleir.com/pick2me', description: 'Assistente de Compras com IA' },
     { slug: 'Frases do Bingo', url: 'https://go.farleir.com/frasesbingo', description: 'Gerador de frases para bingo corporativo.' },
     { slug: 'Analista de Bagé', url: 'https://go.farleir.com/analistadebage', description: 'O grande pensador gaúcho em um app.' },
-    { slug: 'Status dos Sistemas', url: 'https://go.farleir.com/status', description: 'Monitoramento em tempo real dos serviços.' },
 ]);
 
 </script>
