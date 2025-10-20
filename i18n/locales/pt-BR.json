@@ -1,0 +1,180 @@
+{
+  "common": {
+    "i18n": "Multi Idioma",
+    "abbreviations": "Pt",
+    "current_language": "Português",
+    "try_again": "Tente novamente",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "close": "Fechar",
+    "save": "Salvar",
+    "edit": "Editar",
+    "delete": "Deletar",
+    "delete_success": "Deletado com sucesso!",
+    "search": "Pesquisar"
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "login": {
+    "title": "Login",
+    "description": "Insira seu token do site para fazer login",
+    "tips": "Dicas",
+    "preview_token": "O token do site para o modo de visualização é",
+    "submit": "Login",
+    "failed": "Falha no login, por favor tente novamente"
+  },
+  "logout": {
+    "title": "Sair?",
+    "confirm": "Você tem certeza que quer sair?",
+    "action": "Sair"
+  },
+  "layouts": {
+    "footer": {
+      "copyright": "Produtos de HTML.ZONE",
+      "social": {
+        "email": "Email",
+        "telegram": "Telegram",
+        "blog": "Blog",
+        "twitter": "Twitter",
+        "mastodon": "Mastodon",
+        "github": "GitHub"
+      }
+    },
+    "header": {
+      "select_language": "Selecionar Idioma"
+    }
+  },
+  "nav": {
+    "links": "Links",
+    "analysis": "Análise",
+    "realtime": "Tempo real"
+  },
+  "home": {
+    "features": {
+      "title": "Recursos",
+      "subtitle": "Funcionalidade simples e suficiente",
+      "url_shortening": {
+        "title": "Encurtamento de URL",
+        "description": "Comprima seus URLs para o comprimento mínimo"
+      },
+      "analytics": {
+        "title": "Análise",
+        "description": "Monitore a análise de links e colete estatísticas perspicazes"
+      },
+      "serverless": {
+        "title": "Serverless",
+        "description": "Implante sem a necessidade de servidores tradicionais"
+      },
+      "customizable_slug": {
+        "title": "Slug personalizável",
+        "description": "Suporte para slugs personalizados e sensibilidade a maiúsculas"
+      },
+      "ai_slug": {
+        "title": "AI Slug",
+        "description": "Aproveite a IA para gerar slugs"
+      },
+      "link_expiration": {
+        "title": "Expiração de Link",
+        "description": "Defina datas de expiração para seus links"
+      }
+    },
+    "cta": {
+      "title": "Implantação imediata",
+      "description": "Com apenas alguns cliques simples, você pode começar a implantar sem nenhuma despesa",
+      "button": "Começar a Implantar"
+    },
+    "logos": {
+      "title": "Construído com tecnologias incríveis"
+    },
+    "twitter": {
+      "follow": "Siga-me no X(Twitter)"
+    }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "visits": "Visitas",
+    "views": "Visualizações",
+    "visitors": "Visitantes",
+    "referers": "Referências",
+    "stats": "Estatísticas de",
+    "custom_date": "Data Personalizada",
+    "date": "Data",
+    "date_range": "Intervalo de Datas",
+    "locations": "Localizações",
+    "details": "Detalhes",
+    "name": "Nome",
+    "count": "Contagem",
+    "loading": "Carregando",
+    "no_data": "Nenhum Dado",
+    "none": "(Nenhum)",
+    "filter_placeholder": "Filtrar links...",
+    "date_picker": {
+      "today": "Hoje",
+      "last_24h": "Últimas 24 horas",
+      "this_week": "Esta semana",
+      "last_7d": "Últimos 7 dias",
+      "this_month": "Este mês",
+      "last_30d": "Últimos 30 dias",
+      "last_90d": "Últimos 90 dias",
+      "custom": "Personalizado",
+      "custom_title": "Data Personalizada",
+      "single_date": "Data",
+      "date_range": "Intervalo de Datas"
+    },
+    "metrics": {
+      "country": "País",
+      "region": "Região",
+      "city": "Cidade",
+      "referer": "Referência",
+      "slug": "Slug",
+      "language": "Idioma",
+      "timezone": "Fuso Horário",
+      "device": "Dispositivo",
+      "deviceType": "Tipo de Dispositivo",
+      "os": "SO",
+      "browser": "Navegador",
+      "browserType": "Tipo de Navegador"
+    },
+    "time_picker": {
+      "today": "Hoje",
+      "last_5m": "Últimos 5 minutos",
+      "last_10m": "Últimos 10 minutos",
+      "last_30m": "Últimos 30 minutos",
+      "last_1h": "Última 1 hora",
+      "last_6h": "Últimas 6 horas",
+      "last_12h": "Últimas 12 horas",
+      "last_24h": "Últimas 24 horas"
+    }
+  },
+  "links": {
+    "create": "Criar Link",
+    "edit": "Editar Link",
+    "delete_confirm_title": "Você tem certeza absoluta?",
+    "delete_confirm_desc": "Esta ação não pode ser desfeita. Isso realmente deletará seu link dos servidores.",
+    "delete_success": "Deletado com sucesso!",
+    "update_success": "Link atualizado com sucesso",
+    "create_success": "Link criado com sucesso",
+    "preview_mode_tip": "O link do modo de visualização é válido por até 5 minutos.",
+    "search_placeholder": "Pesquisar links...",
+    "no_results": "Nenhum link encontrado.",
+    "group_title": "Links",
+    "copy_success": "Copiado com sucesso!",
+    "created_at": "Criado em",
+    "updated_at": "Atualizado em",
+    "expires_at": "Expira em",
+    "no_more": "Não há mais links",
+    "load_failed": "Falha ao carregar os links,",
+    "download_qr_code": "Baixar Código QR",
+    "sort": {
+      "newest": "Mais Recentes Primeiro",
+      "oldest": "Mais Antigos Primeiro",
+      "az": "Slug A-Z",
+      "za": "Slug Z-A",
+      "tip": "Experiência: Apenas para links carregados"
+    }
+  }
+}
