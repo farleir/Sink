@@ -1,14 +1,23 @@
 <script setup lang="ts">
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   link: {
     type: Object,
     required: true,
   },
 })
+
+const finalUrl = computed(() => {
+  if (props.link.url && (props.link.url.startsWith('https://go.farleir.com') || props.link.url.startsWith('http://go.farleir.com'))) {
+    return props.link.url
+  }
+  return `https://go.farleir.com/${props.link.slug}`
+})
 </script>
 
 <template>
-  <a :href="link.url" target="_blank" rel="noopener noreferrer"
+  <a :href="finalUrl" target="_blank" rel="noopener noreferrer"
      class="group flex items-center p-4 rounded-xl
             bg-[hsl(var(--card)/0.5)] border border-[hsl(var(--border))]
             transition-all duration-200 ease-in-out backdrop-blur-sm
